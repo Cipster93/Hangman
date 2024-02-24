@@ -1,9 +1,10 @@
-let words = ['APPLE', 'AARDVARK', 'ANT', 'ANTELOPE', 'ALLIGATOR', 'BANANA', 'BEAR', 'BIRD', 'BISON', 'BUTTERFLY', 'CAR', 'CAT', 'CAMEL', 'CROCODILE', 'COW', 'DOG', 'DOLPHIN', 'DUCK', 'DEER', 'DRAGONFLY','ELEPHANT', 'EAGLE', 'ELK', 'EMU', 'EARTHWORM','FISH', 'FROG', 'FOX', 'FLAMINGO', 'FALCON',
-'GIRAFFE', 'GOAT', 'GORILLA', 'GRASSHOPPER', 'GAZELLE','HORSE', 'HIPPO', 'HAWK', 'HEDGEHOG', 'HUMMINGBIRD','ICE', 'IGUANA', 'IMPALA', 'IBIS', 'INDRI','JAGUAR', 'JELLYFISH', 'JAY', 'JACKAL', 'JERBOA','KANGAROO', 'KOALA', 'KINGFISHER', 'KOOKABURRA', 'KIWI',
-'LION', 'LEOPARD', 'LLAMA', 'LADYBUG', 'LYNX','MANGO', 'MONKEY', 'MOUSE', 'MOOSE', 'MAGPIE','NIGHT', 'NEWT', 'NIGHTINGALE', 'NUMBAT', 'NARWHAL','ORANGE', 'OSTRICH', 'OTTER', 'OWL', 'OCTOPUS','PENGUIN', 'PARROT', 'PANDA', 'PELICAN', 'PANTHER',
-'QUEEN', 'QUOKKA', 'QUAIL', 'QUETZAL', 'QUOKKA','RABBIT', 'RACCOON', 'RHINOCEROS', 'RAT', 'ROBIN','SUN', 'SNAKE', 'SHARK', 'SHEEP', 'SPARROW','TIGER', 'TURTLE', 'TURKEY', 'TOUCAN', 'TARSIER','UMBRELLA', 'UAKARI', 'URIAL', 'UNICORN', 'UGUISU','VULTURE', 'VIPER', 'VOLE', 'VAQUITA',
-'WHALE', 'WOLF', 'WOMBAT', 'WOODPECKER', 'WALRUS','XERUS', 'XENOPS', 'XENOPUS', 'XANTUS', 'XOLOITZCUINTLI','YAK', 'YABBY', 'YAKOW', 'YELLOWHAMMER', 'YELLOWJACKET','ZEBRA', 'ZEBU', 'ZONKEY', 'ZORSE', 'ZORRO'];
-let llifes = 7;
+let words = ['APPLE','AARDVARK','ANT','ANTELOPE','ALLIGATOR','BANANA','BEAR','BIRD','BISON','BUTTERFLY','CAR','CAT','CAMEL','CROCODILE','COW','DOG','DOLPHIN','DUCK','DEER','DRAGONFLY','ELEPHANT','EAGLE','ELK','EMU','EARTHWORM','FISH','FROG','FOX','FLAMINGO','FALCON',
+'GIRAFFE','GOAT','GORILLA','GRASSHOPPER','GAZELLE','HORSE','HIPPO','HAWK','HEDGEHOG','HUMMINGBIRD','ICE','IGUANA','IMPALA','IBIS','INDRI','JAGUAR','JELLYFISH','JAY','JACKAL','JERBOA','KANGAROO','KOALA','KINGFISHER','KOOKABURRA','KIWI',
+'LION','LEOPARD','LLAMA','LADYBUG','LYNX','MANGO','MONKEY','MOUSE','MOOSE','MAGPIE','NIGHT','NEWT','NIGHTINGALE','NUMBAT','NARWHAL','ORANGE','OSTRICH','OTTER','OWL','OCTOPUS','PENGUIN','PARROT','PANDA','PELICAN','PANTHER',
+'QUEEN','QUOKKA','QUAIL','QUETZAL','QUOKKA','RABBIT','RACCOON','RHINOCEROS','RAT','ROBIN','SUN','SNAKE','SHARK','SHEEP','SPARROW','TIGER','TURTLE','TURKEY','TOUCAN','TARSIER','UMBRELLA','UAKARI','URIAL','UNICORN','UGUISU','VULTURE','VIPER','VOLE','VAQUITA',
+'WHALE','WOLF','WOMBAT','WOODPECKER','WALRUS','XERUS','XENOPS','XENOPUS','XANTUS','XOLOITZCUINTLI','YAK','YABBY','YAKOW','YELLOWHAMMER','YELLOWJACKET','ZEBRA','ZEBU','ZONKEY','ZORSE','ZORRO'];
+
+let lifes = 7;
 let letterCount = 0;
 
 function choseAWord() {
@@ -40,14 +41,16 @@ buttons.forEach(button => {
                 ++letterCount;
             }
         }
-        if (guessed == false && llifes >= 0) {
-            --llifes;
-            document.getElementById("lifes").textContent = "Lifes " + llifes;
+        if (guessed == false && lifes >= 0) {
+            --lifes;
+            document.getElementById("lifes").textContent = "Lifes " + lifes;
         } 
-        if (llifes > -1 && letterCount == theWord.length) {
+        if (lifes > -1 && letterCount == theWord.length) {
             document.getElementById("result").textContent = "Winner";
-        } if (llifes == -1 && letterCount != theWord.length) {
+        } if (lifes == -1 && letterCount != theWord.length) {
             document.getElementById("result").textContent = "Try again!";
             wordDisplayElement.textContent = "The word was: " + " " + theWord;
         }
     });
+});
+
